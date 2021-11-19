@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>ExamJS_FishTank</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+        body{padding:0; margin:0; background-color:aqua;}
+        ul{list-style-type:none; padding:0; margin:0;}
+        li, img {width:50px; height:50px;}
+        li {position: absolute;}
+        </style>
+    </head>
+    <body id="fish_tank">
+        <ul>
+            <li class="fish1"><img src='http://icons.iconarchive.com/icons/icons8/ios7/256/Animals-Fish-icon.png' alt="fish"></li>
+            <li class="fish2"><img src='http://icons.iconarchive.com/icons/icons8/ios7/256/Animals-Fish-icon.png' alt="fish"></li>
+            <li class="fish3"><img src='http://icons.iconarchive.com/icons/icons8/ios7/256/Animals-Fish-icon.png' alt="fish"></li>
+            <li class="fish4"><img src='http://icons.iconarchive.com/icons/icons8/ios7/256/Animals-Fish-icon.png' alt="fish"></li>
+            <li class="fish5"><img src='http://icons.iconarchive.com/icons/icons8/ios7/256/Animals-Fish-icon.png' alt="fish"></li>
+            <li class="fish6"><img src='http://icons.iconarchive.com/icons/icons8/ios7/256/Animals-Fish-icon.png' alt="fish"></li>
+            <li class="fish7"><img src='http://icons.iconarchive.com/icons/icons8/ios7/256/Animals-Fish-icon.png' alt="fish"></li>
+            <li class="fish8"><img src='http://icons.iconarchive.com/icons/icons8/ios7/256/Animals-Fish-icon.png' alt="fish"></li>
+            <li class="fish9"><img src='http://icons.iconarchive.com/icons/icons8/ios7/256/Animals-Fish-icon.png' alt="fish"></li>
+            <li class="fish10"><img src='http://icons.iconarchive.com/icons/icons8/ios7/256/Animals-Fish-icon.png' alt="fish"></li>
+            <li class="fish11"><img src='http://icons.iconarchive.com/icons/icons8/ios7/256/Animals-Fish-icon.png' alt="fish"></li>
+            <li class="fish12"><img src='http://icons.iconarchive.com/icons/icons8/ios7/256/Animals-Fish-icon.png' alt="fish"></li>
+            <li class="fish13"><img src='http://icons.iconarchive.com/icons/icons8/ios7/256/Animals-Fish-icon.png' alt="fish"></li>
+            <li class="fish14"><img src='http://icons.iconarchive.com/icons/icons8/ios7/256/Animals-Fish-icon.png' alt="fish"></li>
+            <li class="fish15"><img src='http://icons.iconarchive.com/icons/icons8/ios7/256/Animals-Fish-icon.png' alt="fish"></li>
+            <li class="fish16"><img src='http://icons.iconarchive.com/icons/icons8/ios7/256/Animals-Fish-icon.png' alt="fish"></li>
+            <li class="fish17"><img src='http://icons.iconarchive.com/icons/icons8/ios7/256/Animals-Fish-icon.png' alt="fish"></li>
+            <li class="fish18"><img src='http://icons.iconarchive.com/icons/icons8/ios7/256/Animals-Fish-icon.png' alt="fish"></li>
+            <li class="fish19"><img src='http://icons.iconarchive.com/icons/icons8/ios7/256/Animals-Fish-icon.png' alt="fish"></li>
+            <li class="fish20"><img src='http://icons.iconarchive.com/icons/icons8/ios7/256/Animals-Fish-icon.png' alt="fish"></li>
+        </ul>
+    </body>
+    <script>
+    
+    // two variables holding the coordinates for the position of the cursor when clicked
+    let posX;
+    let posY;
+    
+    // validating if the mouse has been clicked
+    // and getting the coordinates of the cursor
+    let isMouseDown = false;
+    document.addEventListener("mousedown", () =>
+    {
+    posX = event.clientX;
+    posY = event.clientY;
+    isMouseDown = true;
+    console.log('posX: ' + posX + ' posY: ' + posY);
+    });
+    document.addEventListener("mouseup", () =>
+    {
+    isMouseDown = false;
+    });
+    
+    // coordinates for the fish on the screen
+    let newTop;
+    let newLeft;
+    
+    // fish1 swim function
+    function swim_fish1(){
+    
+    if(isMouseDown)
+    {
+    newTop = posY + "px";
+    newLeft = posX + "px";
+    
+    }
+    else
+    {
+    newTop = Math.random()*($(document).height()-50) + "px";
+    newLeft = Math.random()*($(document).width()-50) + "px";
+    }
+    if(newLeft<$(".fish1").offset().left)
+    {
+    $(".fish1").css("transform", "rotateY(180deg)");
+    }else{
+    $(".fish1").css("transform", "rotateY(0deg)");
+    }
+    $(".fish1").animate({
+    left:newLeft,
+    top :newTop,
+    },
+    1000,
+    ()=>{swim_fish1();}
+    );
+    
+    }
+    
+    // fish2 swim function
+    function swim_fish2(){
+    
+    if(isMouseDown)
+    {
+    newTop = posY + "px";
+    newLeft = posX + "px";
+    
+    }
+    else
+    {
+    newTop = Math.random()*($(document).height()-50) + "px";
+    newLeft = Math.random()*($(document).width()-50) + "px";
+    }
+    if(newLeft<$(".fish2").offset().left)
+    {
+    $(".fish2").css("transform", "rotateY(180deg)");
+    }else{
+    $(".fish2").css("transform", "rotateY(0deg)");
+    }
+    $(".fish2").animate({
+    left:newLeft,
+    top :newTop,
+    },
+    1000,
+    ()=>{swim_fish2();}
+    );
+    
+    }
+    
+    // fish3 swim function
+    function swim_fish3(){
+    
+    if(isMouseDown)
+    {
+    newTop = posY + "px";
+    newLeft = posX + "px";
+    
+    }
+    else
+    {
+    newTop = Math.random()*($(document).height()-50) + "px";
+    newLeft = Math.random()*($(document).width()-50) + "px";
+    }
+    if(newLeft<$(".fish3").offset().left)
+    {
+    $(".fish3").css("transform", "rotateY(180deg)");
+    }else{
+    $(".fish3").css("transform", "rotateY(0deg)");
+    }
+    $(".fish3").animate({
+    left:newLeft,
+    top :newTop,
+    },
+    1000,
+    ()=>{swim_fish3();}
+    );
+    
+    }
+    
+    // fish4 swim function
+    function swim_fish4(){
+    
+    if(isMouseDown)
+    {
+    newTop = posY + "px";
+    newLeft = posX + "px";
+    
+    }
+    else
+    {
+    newTop = Math.random()*($(document).height()-50) + "px";
+    newLeft = Math.random()*($(document).width()-50) + "px";
+    }
+    if(newLeft<$(".fish4").offset().left)
+    {
+    $(".fish4").css("transform", "rotateY(180deg)");
+    }else{
+    $(".fish4").css("transform", "rotateY(0deg)");
+    }
+    $(".fish4").animate({
+    left:newLeft,
+    top :newTop,
+    },
+    1000,
+    ()=>{swim_fish4();}
+    );
+    
+    }
+    
+    // fish5 swim function
+    function swim_fish5(){
+    
+    if(isMouseDown)
+    {
+    newTop = posY + "px";
+    newLeft = posX + "px";
+    
+    }
+    else
+    {
+    newTop = Math.random()*($(document).height()-50) + "px";
+    newLeft = Math.random()*($(document).width()-50) + "px";
+    }
+    if(newLeft<$(".fish5").offset().left)
+    {
+    $(".fish5").css("transform", "rotateY(180deg)");
+    }else{
+    $(".fish5").css("transform", "rotateY(0deg)");
+    }
+    $(".fish5").animate({
+    left:newLeft,
+    top :newTop,
+    },
+    1000,
+    ()=>{swim_fish5();}
+    );
+    
+    }
+    
+    // fish6 swim function
+    function swim_fish6(){
+    
+    if(isMouseDown)
+    {
+    newTop = posY + "px";
+    newLeft = posX + "px";
+    
+    }
+    else
+    {
+    newTop = Math.random()*($(document).height()-50) + "px";
+    newLeft = Math.random()*($(document).width()-50) + "px";
+    }
+    if(newLeft<$(".fish6").offset().left)
+    {
+    $(".fish6").css("transform", "rotateY(180deg)");
+    }else{
+    $(".fish6").css("transform", "rotateY(0deg)");
+    }
+    $(".fish6").animate({
+    left:newLeft,
+    top :newTop,
+    },
+    1000,
+    ()=>{swim_fish6();}
+    );
+    
+    }
+    
+    // fish7 swim function
+    function swim_fish7(){
+    
+    if(isMouseDown)
+    {
+    newTop = posY + "px";
+    newLeft = posX + "px";
+    
+    }
+    else
+    {
+    newTop = Math.random()*($(document).height()-50) + "px";
+    newLeft = Math.random()*($(document).width()-50) + "px";
+    }
+    if(newLeft<$(".fish7").offset().left)
+    {
+    $(".fish7").css("transform", "rotateY(180deg)");
+    }else{
+    $(".fish7").css("transform", "rotateY(0deg)");
+    }
+    $(".fish7").animate({
+    left:newLeft,
+    top :newTop,
+    },
+    1000,
+    ()=>{swim_fish7();}
+    );
+    
+    }
+    
+    // fish8 swim function
+    function swim_fish8(){
+    
+    if(isMouseDown)
+    {
+    newTop = posY + "px";
+    newLeft = posX + "px";
+    
+    }
+    else
+    {
+    newTop = Math.random()*($(document).height()-50) + "px";
+    newLeft = Math.random()*($(document).width()-50) + "px";
+    }
+    if(newLeft<$(".fish8").offset().left)
+    {
+    $(".fish8").css("transform", "rotateY(180deg)");
+    }else{
+    $(".fish8").css("transform", "rotateY(0deg)");
+    }
+    $(".fish8").animate({
+    left:newLeft,
+    top :newTop,
+    },
+    1000,
+    ()=>{swim_fish8();}
+    );
+    
+    }
+    
+    // fish9 function
+    function swim_fish9(){
+    
+    if(isMouseDown)
+    {
+    newTop = posY + "px";
+    newLeft = posX + "px";
+    
+    }
+    else
+    {
+    newTop = Math.random()*($(document).height()-50) + "px";
+    newLeft = Math.random()*($(document).width()-50) + "px";
+    }
+    if(newLeft<$(".fish9").offset().left)
+    {
+    $(".fish9").css("transform", "rotateY(180deg)");
+    }else{
+    $(".fish9").css("transform", "rotateY(0deg)");
+    }
+    $(".fish9").animate({
+    left:newLeft,
+    top :newTop,
+    },
+    1000,
+    ()=>{swim_fish9();}
+    );
+    
+    }
+    
+    // fish10 swim function
+    function swim_fish10(){
+    
+    if(isMouseDown)
+    {
+    newTop = posY + "px";
+    newLeft = posX + "px";
+    
+    }
+    else
+    {
+    newTop = Math.random()*($(document).height()-50) + "px";
+    newLeft = Math.random()*($(document).width()-50) + "px";
+    }
+    if(newLeft<$(".fish10").offset().left)
+    {
+    $(".fish10").css("transform", "rotateY(180deg)");
+    }else{
+    $(".fish10").css("transform", "rotateY(0deg)");
+    }
+    $(".fish10").animate({
+    left:newLeft,
+    top :newTop,
+    },
+    1000,
+    ()=>{swim_fish10();}
+    );
+    
+    }
+    // fish11 swim function
+    function swim_fish11(){
+    
+    if(isMouseDown)
+    {
+    newTop = posY + "px";
+    newLeft = posX + "px";
+    
+    }
+    else
+    {
+    newTop = Math.random()*($(document).height()-50) + "px";
+    newLeft = Math.random()*($(document).width()-50) + "px";
+    }
+    if(newLeft<$(".fish11").offset().left)
+    {
+    $(".fish11").css("transform", "rotateY(180deg)");
+    }else{
+    $(".fish11").css("transform", "rotateY(0deg)");
+    }
+    $(".fish11").animate({
+    left:newLeft,
+    top :newTop,
+    },
+    1000,
+    ()=>{swim_fish11();}
+    );
+    
+    }
+    
+    // fish12 swim function
+    function swim_fish12(){
+    
+    if(isMouseDown)
+    {
+    newTop = posY + "px";
+    newLeft = posX + "px";
+    
+    }
+    else
+    {
+    newTop = Math.random()*($(document).height()-50) + "px";
+    newLeft = Math.random()*($(document).width()-50) + "px";
+    }
+    if(newLeft<$(".fish12").offset().left)
+    {
+    $(".fish12").css("transform", "rotateY(180deg)");
+    }else{
+    $(".fish12").css("transform", "rotateY(0deg)");
+    }
+    $(".fish12").animate({
+    left:newLeft,
+    top :newTop,
+    },
+    1000,
+    ()=>{swim_fish12();}
+    );
+    
+    }
+    
+    // fish13 swim function
+    function swim_fish13(){
+    
+    if(isMouseDown)
+    {
+    newTop = posY + "px";
+    newLeft = posX + "px";
+    
+    }
+    else
+    {
+    newTop = Math.random()*($(document).height()-50) + "px";
+    newLeft = Math.random()*($(document).width()-50) + "px";
+    }
+    if(newLeft<$(".fish13").offset().left)
+    {
+    $(".fish13").css("transform", "rotateY(180deg)");
+    }else{
+    $(".fish13").css("transform", "rotateY(0deg)");
+    }
+    $(".fish13").animate({
+    left:newLeft,
+    top :newTop,
+    },
+    1000,
+    ()=>{swim_fish13();}
+    );
+    
+    }
+    
+    // fish14 swim function
+    function swim_fish14(){
+    
+    if(isMouseDown)
+    {
+    newTop = posY + "px";
+    newLeft = posX + "px";
+    
+    }
+    else
+    {
+    newTop = Math.random()*($(document).height()-50) + "px";
+    newLeft = Math.random()*($(document).width()-50) + "px";
+    }
+    if(newLeft<$(".fish14").offset().left)
+    {
+    $(".fish14").css("transform", "rotateY(180deg)");
+    }else{
+    $(".fish14").css("transform", "rotateY(0deg)");
+    }
+    $(".fish14").animate({
+    left:newLeft,
+    top :newTop,
+    },
+    1000,
+    ()=>{swim_fish14();}
+    );
+    
+    }
+    
+    // fish15 swim function
+    function swim_fish15(){
+    
+    if(isMouseDown)
+    {
+    newTop = posY + "px";
+    newLeft = posX + "px";
+    
+    }
+    else
+    {
+    newTop = Math.random()*($(document).height()-50) + "px";
+    newLeft = Math.random()*($(document).width()-50) + "px";
+    }
+    if(newLeft<$(".fish15").offset().left)
+    {
+    $(".fish15").css("transform", "rotateY(180deg)");
+    }else{
+    $(".fish15").css("transform", "rotateY(0deg)");
+    }
+    $(".fish15").animate({
+    left:newLeft,
+    top :newTop,
+    },
+    1000,
+    ()=>{swim_fish15();}
+    );
+    
+    }
+    
+    // fish16 swim function
+    function swim_fish16(){
+    
+    if(isMouseDown)
+    {
+    newTop = posY + "px";
+    newLeft = posX + "px";
+    
+    }
+    else
+    {
+    newTop = Math.random()*($(document).height()-50) + "px";
+    newLeft = Math.random()*($(document).width()-50) + "px";
+    }
+    if(newLeft<$(".fish16").offset().left)
+    {
+    $(".fish16").css("transform", "rotateY(180deg)");
+    }else{
+    $(".fish16").css("transform", "rotateY(0deg)");
+    }
+    $(".fish16").animate({
+    left:newLeft,
+    top :newTop,
+    },
+    1000,
+    ()=>{swim_fish16();}
+    );
+    
+    }
+    
+    // fish17 swim function
+    function swim_fish17(){
+    
+    if(isMouseDown)
+    {
+    newTop = posY + "px";
+    newLeft = posX + "px";
+    
+    }
+    else
+    {
+    newTop = Math.random()*($(document).height()-50) + "px";
+    newLeft = Math.random()*($(document).width()-50) + "px";
+    }
+    if(newLeft<$(".fish17").offset().left)
+    {
+    $(".fish17").css("transform", "rotateY(180deg)");
+    }else{
+    $(".fish17").css("transform", "rotateY(0deg)");
+    }
+    $(".fish17").animate({
+    left:newLeft,
+    top :newTop,
+    },
+    1000,
+    ()=>{swim_fish17();}
+    );
+    
+    }
+    
+    // fish18 swim function
+    function swim_fish18(){
+    
+    if(isMouseDown)
+    {
+    newTop = posY + "px";
+    newLeft = posX + "px";
+    
+    }
+    else
+    {
+    newTop = Math.random()*($(document).height()-50) + "px";
+    newLeft = Math.random()*($(document).width()-50) + "px";
+    }
+    if(newLeft<$(".fish18").offset().left)
+    {
+    $(".fish18").css("transform", "rotateY(180deg)");
+    }else{
+    $(".fish18").css("transform", "rotateY(0deg)");
+    }
+    $(".fish18").animate({
+    left:newLeft,
+    top :newTop,
+    },
+    1000,
+    ()=>{swim_fish18();}
+    );
+    
+    }
+    
+    // fish19 swim function
+    function swim_fish19(){
+    
+    if(isMouseDown)
+    {
+    newTop = posY + "px";
+    newLeft = posX + "px";
+    
+    }
+    else
+    {
+    newTop = Math.random()*($(document).height()-50) + "px";
+    newLeft = Math.random()*($(document).width()-50) + "px";
+    }
+    if(newLeft<$(".fish19").offset().left)
+    {
+    $(".fish19").css("transform", "rotateY(180deg)");
+    }else{
+    $(".fish19").css("transform", "rotateY(0deg)");
+    }
+    $(".fish19").animate({
+    left:newLeft,
+    top :newTop,
+    },
+    1000,
+    ()=>{swim_fish19();}
+    );
+    
+    }
+    
+    // fish20 swim function
+    function swim_fish20(){
+    
+    if(isMouseDown)
+    {
+    newTop = posY + "px";
+    newLeft = posX + "px";
+    
+    }
+    else
+    {
+    newTop = Math.random()*($(document).height()-50) + "px";
+    newLeft = Math.random()*($(document).width()-50) + "px";
+    }
+    if(newLeft<$(".fish20").offset().left)
+    {
+    $(".fish20").css("transform", "rotateY(180deg)");
+    }else{
+    $(".fish20").css("transform", "rotateY(0deg)");
+    }
+    $(".fish20").animate({
+    left:newLeft,
+    top :newTop,
+    },
+    1000,
+    ()=>{swim_fish20();}
+    );
+    
+    }
+    
+    
+    $(document).ready(function(){
+    swim_fish1();
+    });
+    $(document).ready(function(){
+    swim_fish2();
+    });
+    $(document).ready(function(){
+    swim_fish3();
+    });
+    $(document).ready(function(){
+    swim_fish4();
+    });
+    $(document).ready(function(){
+    swim_fish5();
+    });
+    $(document).ready(function(){
+    swim_fish6();
+    });
+    $(document).ready(function(){
+    swim_fish7();
+    });
+    $(document).ready(function(){
+    swim_fish8();
+    });
+    $(document).ready(function(){
+    swim_fish9();
+    });
+    $(document).ready(function(){
+    swim_fish10();
+    });
+    $(document).ready(function(){
+    swim_fish11();
+    });
+    $(document).ready(function(){
+    swim_fish12();
+    });
+    $(document).ready(function(){
+    swim_fish13();
+    });
+    $(document).ready(function(){
+    swim_fish14();
+    });
+    $(document).ready(function(){
+    swim_fish15();
+    });
+    $(document).ready(function(){
+    swim_fish16();
+    });
+    $(document).ready(function(){
+    swim_fish17();
+    });
+    $(document).ready(function(){
+    swim_fish18();
+    });
+    $(document).ready(function(){
+    swim_fish19();
+    });
+    $(document).ready(function(){
+    swim_fish20();
+    });
+    </script>
+</html>

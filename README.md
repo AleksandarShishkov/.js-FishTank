@@ -1,6 +1,6 @@
 Creating a FishTank with 20 fishes in that swim on random sides using JavaScript. 
 
-When the mouse is clicked somewhere on the tank, the fishes gather on that location.
+When the mouse is clicked somewhere in the tank, the fishes gather on that location.
 
 The fishes also rotate depending on the direction they are swimming at.
 
